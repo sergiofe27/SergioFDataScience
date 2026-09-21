@@ -1,0 +1,30 @@
+name: Grade my work
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  grade:
+    uses: Moises-dsci/BPS-Dsci/.github/workflows/autograde.yml@main
+```[cite: 7]
+
+---
+
+### Paso 3: Copiar el cuaderno de ejercicios
+1. Ve a la carpeta del profesor: `BPS-Dsci/lessons/02-DATA-ACQUISITION-AND-INGESTION/exercises/`[cite: 7, 8].
+2. Copia el archivo `lesson02-data-acquisition-and-ingestion-exercises.ipynb`[cite: 8].
+3. Pégalo directamente dentro de la carpeta de tu **repositorio personal** (sin cambiarle el nombre)[cite: 7].
+
+---
+
+### Paso 4: Resolver y subir a GitHub
+1. Abre el cuaderno `.ipynb` desde tu repositorio personal usando VS Code o Jupyter Lab.
+2. Resuelve las secciones con `# TODO` y guarda los cambios[cite: 8].
+3. Abre la terminal en tu repositorio personal y sube tus cambios ejecutando:
+   ```bash
+   git add .
+   git commit -m "Añadida configuracion de correccion y ejercicios leccion 02"
+   git push origin main
+   ```[cite: 7]
+
+Al hacer el `git push`, tu repositorio en GitHub ejecutará la revisión automática en la pestaña **Actions** para decirte si tus respuestas están correctas (`✅`)[cite: 7].
