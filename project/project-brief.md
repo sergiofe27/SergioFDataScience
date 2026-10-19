@@ -62,6 +62,6 @@ flowchart LR
     C --> D[Data Model: Fact + Dimensions]
     D --> E[Analytics / Engine: KPIs & Demand Model]
     E --> F[Dashboard: Power BI / Streamlit]
-    F --> G[Stakeholder Decision]
+    F --> G((Stakeholder Decision))
 
 
