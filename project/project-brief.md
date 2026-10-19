@@ -103,4 +103,26 @@ flowchart LR
 3. **Average Trip Duration & Long-Trip Share:** Mean travel time in minutes and percentage of trips exceeding 30 minutes (Grain: District/User Type; Target: track operational efficiency).
 4. **Rebalancing Efficiency Index:** Estimated number of trips generated per rebalanced bike moved by field vans (Grain: Daily/Route; Target: maximize trips per van deployment).
 
+---
+
+## 3. Solution Design & Architecture
+
+### 3.1 Solution Type
+* **Type:** Analytical Engine & Operational Dashboard.
+* **Overview (Inputs → Logic → Outputs):** 
+  * **Inputs:** Historical BiciMAD trip logs, real-time station occupancy levels, and hourly weather conditions (AEMET).
+  * **Logic:** Hourly demand forecasting rules per station combined with optimization logic to identify deficit vs. surplus stations.
+  * **Outputs:** A prioritized list of stations requiring rebalancing, presented on an interactive operational dashboard.
+
+### 3.2 General Architecture
+
+```mermaid
+flowchart LR
+    A[Source<br/>Open Data Portal] --> B[Ingestion<br/>Python / pandas]
+    B --> C[Cleaning & Quality<br/>Types, Nulls, Outliers]
+    C --> D[Data Model<br/>Fact + Dimensions]
+    D --> E[Analytics / Engine<br/>KPIs & Demand Model]
+    E --> F[Dashboard<br/>Power BI / Streamlit]
+    F --> G((Stakeholder Decision))
+
 
